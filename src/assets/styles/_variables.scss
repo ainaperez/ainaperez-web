@@ -1,0 +1,32 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Nanum+Gothic:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200;400;600&display=swap");
+
+/* Colors */
+
+$white: #fff;
+$gray: #7e7e7e;
+$black:  #0f0f0f;
+$red: #ee253d;
+
+/* Font families */
+
+$main-font: "Crimson Pro", serif;
+$secondary-font: "Cinzel", serif;
+
+/* Font sizes */
+$font-xxs: .5rem;
+$font-xs: 1rem;
+$font-s: 1.5rem;
+$font-m: 2rem;
+$font-mm: 2.5rem;
+$font-l: 3rem;
+$font-ll: 3.5rem;
+$font-xl: 5rem;
+$font-xxl: 7rem;
+
+/* Device Breakpoints */
+
+$small: 480px;
+$medium: 768px;
+$xlarge: 1201px;

@@ -1,0 +1,75 @@
+.music-body {
+  padding: 0;
+  //height: 100%;
+}
+
+.back-container {
+  display: none;
+}
+
+.music-header {
+  position: fixed;
+  width: 100%;
+  padding: 2vh 0;
+  text-align: center;
+  background-color: $black;
+  border-bottom: 1px solid $red;
+}
+
+@include media-breakpoint-up(md) {
+  .music-header {
+    display: none;
+  }
+
+  .back-container {
+    position: fixed;
+    z-index: 10;
+    display: block;
+    float: left;
+    width: 20vw;
+    height: 100%;
+    background: $red;
+    background: linear-gradient(90deg, $red 0%, rgba(15, 15, 15, 0) 30%);
+    background-position: 20%;
+    background-size: 300%;
+    transition: background-position .5s;
+
+    div {
+      height: 100%;
+      padding-left: 2vw;
+      color: $black;
+
+      p {
+        margin-left: -50%;
+        transition: margin-left .5s ease-in-out, transform .5s ease-in-out;
+        transform: rotate(-90deg);
+        transform-origin: bottom left;
+      }
+
+      svg {
+        transition: opacity .5s ease-in-out;
+      }
+    }
+  }
+
+  .back-container:hover {
+    background-position: 1%;
+
+    div {
+      p {
+        margin-left: 0%;
+        transition: margin-left .5s ease-in-out, transform .5s ease-in-out;
+        transform: rotate(0deg);
+      }
+
+      svg {
+        opacity: 0;
+        //transform: scale(2);
+      }
+    }
+  }
+}
+
+.music-content {
+  padding: 10vh 12vw;
+}
