@@ -225,6 +225,7 @@ header nav {
     text-align: center;
 
     img {
+      width: 80vw;
       filter: grayscale(1);
       transition: filter .5s, transform .5s;
     }
@@ -250,7 +251,6 @@ header nav {
 
   .project-img {
     img {
-      width: 80%;
       max-width: 780px;
     }
   }
