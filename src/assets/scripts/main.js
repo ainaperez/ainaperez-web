@@ -20,8 +20,11 @@ import * as bootstrap from 'bootstrap';
 });*/
 
 //Force reload of page on window resize. Useful specially on desktops.
-window.onresize = () => location.reload(); 
-
+//Calculate only width resize, prevents reload on mobile while scrolling
+var width = $(window).width(), height = $(window).height();
+if($(window).width() != width || $(window).height() != height){
+    location.reload(); 
+}
 
 window.onload = () => {
 
@@ -97,27 +100,23 @@ function menuChange() {
 
 const isTouchDevice = () => {
     return window.matchMedia("(pointer: coarse)").matches
-  }
+}
 
 //Aplly interactivity depending on screen type
-if(isTouchDevice == true){
+if(isTouchDevice()){
     //on touch devices it rotates on scroll
-
     window.onscroll = function () {
         scrollRotate();
       };
-      function scrollRotate() {
-          
-        const circle = document.querySelector("#cover");
-        console.log(circle)
-        circle.style.transform = "rotate(" + window.pageYOffset/6 + "deg)";
+      function scrollRotate() {     
+        const circle = document.querySelector(".cover");
+        circle.style.transform = "rotate(" + window.pageYOffset/2 + "deg)";
       }
 }else{
     function getCenter(element) {
         const {left, top, width, height} = element.getBoundingClientRect();
         return {x: left + width / 2, y: top + height / 2}
     }
-    
     const arrow = document.querySelector("#arrow");
     const arrowCenter = getCenter(arrow);
     addEventListener("mousemove", ({clientX, clientY}) => {
